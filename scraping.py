@@ -104,9 +104,17 @@ def hemisphere_images(browser):
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(url)
     
+    html_hemispheres = browser.html
+    hemisphere_soup= soup(html_hemispheres, 'html.parser')
+
+    hemisphere_items = soup.find_all('div', class() ='item')
+
     hemisphere_image_urls = []
 
-for i in range(4):
+def new_func():
+    return class
+
+for i in hemisphere_items:
     hemispheres = {}
     Browser.find_by_css('a.product-item h3')[i].click()
     element = Browser.find_link_by_text('Sample').first
