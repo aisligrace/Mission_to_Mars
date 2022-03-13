@@ -108,14 +108,14 @@ def hemisphere_images(browser):
 
 for i in range(4):
     hemispheres = {}
-    browser.find_by_css('a.product-item h3')[i].click()
-    element = browser.find_link_by_text('Sample').first
+    Browser.find_by_css('a.product-item h3')[i].click()
+    element = Browser.find_link_by_text('Sample').first
     img_url = element['href']
-    title = browser.find_by_css("h2.title").text
+    title = Browser.find_by_css("h2.title").text
     hemispheres["img_url"] = img_url
     hemispheres["title"] = title
     hemisphere_image_urls.append(hemispheres)
-    browser.back()
+    Browser.back()
 
 hemisphere_image_urls
 
